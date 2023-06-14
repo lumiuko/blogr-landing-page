@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  background: url('/bg-pattern-intro-mobile.svg') no-repeat -340px -240px,
+    linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%) no-repeat;
+}
+
+.section-phones {
+  background: url('/bg-pattern-circles.svg') no-repeat center top -233px,
+    linear-gradient(135deg, #2d2e40 0%, #3f4164 100%) no-repeat;
+  background-size: 602px, cover;
+}
+
+.nav-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.active button {
+  color: #576e83;
+}
+
+.active img {
+  transform: rotate(180deg);
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 1110px) {
+  header {
+    background: url('/bg-pattern-intro-desktop.svg') no-repeat -440px -1345px,
+      linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  }
+
+  .section-editor {
+    background: url('/illustration-editor-desktop.svg') no-repeat;
+    background-position: right -270px top;
+    background-size: 920px;
+  }
+
+  .section-phones {
+    background: url('/bg-pattern-circles.svg') no-repeat bottom -120px left -220px,
+      linear-gradient(135deg, #2d2e40 0%, #3f4164 100%) no-repeat;
+    background-size: 1014px, cover;
+  }
+
+  .section-laptop {
+    background: url('/illustration-laptop-desktop.svg') no-repeat;
+    background-position: left -276px top;
+    background-size: 970px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .section-editor {
+    background-position: right center;
+  }
+
+  .section-laptop {
+    background-position: left center;
+  }
+}

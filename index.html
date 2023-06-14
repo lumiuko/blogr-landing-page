@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Blogr</title>
+  </head>
+  <body class="text-body leading-body font-light xl:bg-gray-body">
+    <header class="px-6 pt-14 pb-[9.75rem] rounded-bl-header xl:pt-[3.625rem]">
+      <nav class="max-w-container mx-auto flex items-center relative">
+        <img src="/logo.svg" class="max-w-[82px] xl:max-w-[101px]" alt="Logo" />
+
+        <!-- Desktop nav -->
+        <div class="hidden ml-16 text-light font-ubuntu font-bold xl:flex flex-grow leading-[1.125rem]">
+          <ul class="flex items-center gap-8">
+            <li class="relative group h-full cursor-pointer hover:text-white transition-colors group" tabindex="0">
+              <div class="flex items-center h-full">
+                <span class="group-hover:underline">Product</span>
+                <img src="/icon-arrow-light.svg" class="ml-2 group-hover:rotate-180 group-focus:rotate-180 transition-transform" alt="Arrow" aria-hidden="true" />
+              </div>
+              <ul class="absolute p-6 -left-1/2 bg-white text-very-dark-black-blue shadow-dropdown leading-[2rem] rounded-[5px] text-[0.9375rem] min-w-[168px] font-normal invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-all">
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Overview</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Pricing</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Marketplace</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Features</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Integrations</a></li>
+              </ul>
+            </li>
+            <li class="relative group h-full cursor-pointer hover:text-white transition-colors group" tabindex="0">
+              <div class="flex items-center h-full">
+                <span class="group-hover:underline">Company</span>
+                <img src="/icon-arrow-light.svg" class="ml-2 group-hover:rotate-180 group-focus:rotate-180 transition-transform" alt="Arrow" aria-hidden="true" />
+              </div>
+              <ul class="absolute p-6 -left-1/2 bg-white text-very-dark-black-blue shadow-dropdown leading-[2rem] rounded-[5px] text-[0.9375rem] min-w-[168px] font-normal invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-all">
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">About</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Team</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Blog</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Careers</a></li>
+              </ul>
+            </li>
+            <li class="relative group h-full cursor-pointer hover:text-white transition-colors group" tabindex="0">
+              <div class="flex items-center h-full">
+                <span class="group-hover:underline">Connect</span>
+                <img src="/icon-arrow-light.svg" class="ml-2 group-hover:rotate-180 group-focus:rotate-180 transition-transform" alt="Arrow" aria-hidden="true" />
+              </div>
+              <ul class="absolute p-6 -left-1/2 bg-white text-very-dark-black-blue shadow-dropdown leading-[2rem] rounded-[5px] text-[0.9375rem] min-w-[168px] font-normal invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-all">
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Contact</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">Newsletter</a></li>
+                <li><a href="#" class="hover:font-bold transition-all" tabindex="0">LinkedIn</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="ml-auto flex items-center gap-8">
+            <a href="#" class="hover:text-white transition-colors">Login</a>
+            <a href="#" class="inline-block bg-white px-10 py-[0.9375rem] text-light-red rounded-btn hover:bg-very-light-red hover:text-white transition-colors">Sign Up</a>
+          </div>
+        </div>
+
+         <!-- Mobile nav button -->
+        <button aria-label="Toggle menu" id="nav-btn" class="ml-auto xl:hidden" aria-expanded="false">
+          <img src="/icon-hamburger.svg" alt="Hamburger icon" aria-hidden="true" id="nav-hamburger" />
+          <img src="/icon-close.svg" class="hidden" alt="Close nav" aria-hidden="true" id="nav-close" />
+        </button>
+
+        <!-- Mobile expandable menu -->
+        <div class="absolute top-0 mt-[4.25rem] bg-white p-6 pb-8 w-full rounded-[5px] shadow-dropdown flex flex-col gap-6 font-semibold text-very-dark-blue text-h5 leading-h5 nav-hidden transition-all xl:hidden" id="mobile-nav">
+          <div class="flex flex-col items-center">
+            <button class="flex items-center transition-colors" aria-expanded="false" data-btn>
+              <span>Product</span>
+              <img src="/icon-arrow-dark.svg" class="ml-2 transition-transform" alt="Arrow" aria-hidden="true" />
+            </button>
+            <div class="w-full overflow-hidden transition-all" style="max-height: 0px; visibility: hidden;">
+              <ul class="mt-6 bg-light-gray text-gray-link w-full text-center py-5 rounded-[5px] flex flex-col gap-3">
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Integrations</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col items-center transition-colors">
+            <button class="flex items-center transition-colors" aria-expanded="false" data-btn>
+              <span>Company</span>
+              <img src="/icon-arrow-dark.svg" class="ml-2 transition-transform" alt="Arrow" aria-hidden="true" />
+            </button>
+            <div class="w-full overflow-hidden transition-all" style="max-height: 0px; visibility: hidden;">
+              <ul class="mt-6 bg-light-gray text-gray-link w-full text-center py-5 rounded-[5px] flex flex-col gap-3">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col items-center">
+            <button class="flex items-center transition-colors" aria-expanded="false" data-btn>
+              <span>Connect</span>
+              <img src="/icon-arrow-dark.svg" class="ml-2 transition-transform" alt="Arrow" aria-hidden="true" />
+            </button>
+            <div class="w-full overflow-hidden transition-all" style="max-height: 0px; visibility: hidden;">
+              <ul class="mt-6 bg-light-gray text-gray-link w-full text-center py-5 rounded-[5px] flex flex-col gap-3">
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full pt-6 border-t-[1px] border-t-line flex flex-col items-center gap-6">
+            <button>Login</button>
+            <button class="bg-gradient text-white rounded-btn px-10 py-[0.9375rem] leading-[1.125rem] font-ubuntu font-bold text-body">Sign Up</button>
+          </div>
+        </div>
+      </nav>
+      <div class="mt-[6.75rem] max-w-[920px] mx-auto flex flex-col items-center text-center text-white xl:mt-[7.5rem]">
+        <h1 class="font-semibold text-h3 leading-h3 tracking-[-1px] xl:text-h1 xl:leading-h1 xl:tracking-[-1.92px]">A modern publishing platform</h1>
+        <p class="mt-3 text-h5 leading-h5 xl:text-[1.25rem] xl:leading-[1.5625rem] xl:mt-4">Grow your audience and build your online brand</p>
+        <div class="mt-10 flex items-center gap-4 font-ubuntu font-bold leading-[1.125rem] xl:mt-12">
+          <a href="#" class="inline-block bg-white px-4 py-[0.9375rem] text-light-red rounded-btn hover:bg-very-light-red hover:text-white transition-colors">Start for Free</a>
+          <a href="#" class="inline-block border-[1px] border-white px-6 py-[0.9375rem] rounded-btn hover:bg-white hover:text-very-light-red transition-colors">Learn More</a>
+        </div>
+      </div>
+    </header>
+    <main class="mt-[6.25rem] xl:mt-[4.5rem]">
+      <section class="px-6 text-very-dark-grayish-blue xl:pt-20 xl:pb-52 section-editor">
+        <div class="max-w-container mx-auto">
+          <h2 class="text-center text-h4 leading-h4 tracking-[-1px] text-very-dark-blue font-semibold xl:text-h2 xl:leading-h2">
+            Designed for the future
+          </h2>
+          <div class="mt-[2.875rem] text-center flex flex-col justify-between items-center gap-[2.875rem] xl:flex-row xl:mt-[6.5rem]">
+            <img src="/illustration-editor-mobile.svg" class="xl:hidden" alt="Illustration editor" />
+            <div class="text-center xl:-order-1 xl:text-left xl:max-w-[540px]">
+              <div>
+                <h3 class="text-h4 leading-h4 font-semibold text-very-dark-blue">Introducing an extensible editor</h3>
+                <p class="mt-4 tracking-[0.5px]">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
+              </div>
+              <div class="mt-10 xl:mt-16">
+                <h3 class="text-h4 leading-h4 font-semibold text-very-dark-blue">Robust content management</h3>
+                <p class="mt-4 tracking-[0.5px]">Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-phones px-6 mt-[17.125rem] rounded-tr-header rounded-bl-header pb-[5.875rem] xl:mt-16 xl:pb-0">
+        <div class="max-w-container mx-auto flex flex-col justify-between items-center gap-12 xl:flex-row xl:gap-0">
+          <img src="/illustration-phones.svg" class="mt-[-10.875rem] xl:max-w-[472px] xl:my-[-3.125rem]" alt="Phones" />
+          <div class="text-center text-white xl:text-left xl:max-w-[540px]">
+            <h2 class="text-h2 leading-h2 tracking-[-1px] font-semibold">State of the Art Infrastructure</h2>
+            <p class="mt-[0.625rem] tracking-[0.5px] xl:mt-4">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section-laptop mt-[4.875rem] px-6 text-very-dark-grayish-blue xl:mt-[7.25rem] xl:py-[11.875rem]">
+        <div class="max-w-container mx-auto text-center flex flex-col items-center xl:flex-row xl:text-left xl:justify-end">
+          <img src="/illustration-laptop-mobile.svg" class="mt-[2.875rem] xl:hidden" alt="Illustration laptop" />
+          <div class="mt-[2.875rem] xl:max-w-[540px] xl:mt-0 tracking-[0.5px] text-">
+            <div>
+              <h3 class="text-h4 leading-h4 font-semibold text-very-dark-blue">Free, open, simple</h3>
+              <p class="mt-4">Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+            </div>
+            <div class="mt-10 xl:mt-16">
+              <h3 class="text-h4 leading-h4 font-semibold text-very-dark-blue">Powerful tooling</h3>
+              <p class="mt-4">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="mt-[6.25rem] bg-very-dark-black-blue px-6 py-[4.75rem] rounded-tr-header xl:mt-[7.75rem] xl:py-[4.375rem]">
+      <div class="max-w-container mx-auto flex flex-col justify-between items-center text-center gap-[4.5rem] xl:flex-row xl:text-left xl:items-start">
+        <img src="/logo.svg" alt="Logo" />
+        <div class="text-gray leading-[2.0625rem] font-ubuntu flex flex-col gap-10 xl:flex-row xl:gap-[1.875rem]">
+          <div class="xl:w-[255px]">
+            <h2 class="text-h5 text-white font-medium xl:text-[0.9375rem]">Product</h2>
+            <ul class="mt-5">
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Marketplace</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Integrations</a></li>
+            </ul>
+          </div>
+          <div class="xl:w-[255px]">
+            <h2 class="text-h5 text-white font-medium xl:text-[0.9375rem]">Company</h2>
+            <ul class="mt-5">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="xl:w-[255px]">
+            <h2 class="text-h5 text-white font-medium xl:text-[0.9375rem]">Connect</h2>
+            <ul class="mt-5">
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Newsletter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
